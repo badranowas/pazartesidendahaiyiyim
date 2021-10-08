@@ -4834,11 +4834,6 @@ function library:CreateWindow(options)
 			Name = "Background",
 			Side = "right"
 		})
-
-		local filessection = designer:CreateSection({
-			Name = "Profiles",
-			Side = "right"
-		})
 		local settingssection = designer:CreateSection({
 			Name = "Settings",
 			Side = "right"
@@ -4868,34 +4863,8 @@ function library:CreateWindow(options)
 			Suffix = "Config",
 			Workspace = library.WorkspaceName or "Unnamed Workspace",
 			Desginer = true
-		}
-		local daaata = {{"AddTextbox", "__Designer.Textbox.ImageAssetID", backgroundsection, {
-			Name = "Image Asset ID",
-			Placeholder = "rbxassetid://4427304036",
-			Flag = "__Designer.Background.ImageAssetID",
-			Value = "rbxassetid://4427304036",
-			Callback = updatecolors
-		}}, {"AddColorpicker", "__Designer.Colorpicker.ImageColor", backgroundsection, {
-			Name = "Image Color",
-			Flag = "__Designer.Background.ImageColor",
-			Value = Color3.new(1, 1, 1),
-			Callback = updatecolors,
-			__designer = 1
-		}}, {"AddSlider", "__Designer.Slider.ImageTransparency", backgroundsection, {
-			Name = "Image Transparency",
-			Flag = "__Designer.Background.ImageTransparency",
-			Value = 95,
-			Min = 0,
-			Max = 100,
-			Format = "Image Transparency: %s%%",
-			Textbox = true,
-			Callback = updatecolors
-		}}, {"AddToggle", "__Designer.Toggle.UseBackgroundImage", backgroundsection, {
-			Name = "Use Background Image",
-			Flag = "__Designer.Background.UseBackgroundImage",
-			Value = true,
-			Callback = updatecolors
-		}},  {
+		},
+  {
 			Name = "Reset GUI",
 			Callback = function()
 				destroyrainbowsg = true
@@ -4928,7 +4897,7 @@ function library:CreateWindow(options)
 			Callback = function()
 				lasthidebing = os.clock()
 			end
-		}}}
+		}}
 		if setclipboard and daaata[8] then
 			local common_table = daaata[8][4]
 			if common_table then
